@@ -1,1 +1,120 @@
+-- Хост: 91.219.194.4
+-- Версия сервера: 10.3.39-MariaDB-cll-lve - MariaDB Server
+-- Операционная система: Linux
+-- HeidiSQL Версия: 12.8.0.6908
 
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+-- Дамп структуры для таблица bh35910_kis.ArharovCollectionLinks
+CREATE TABLE IF NOT EXISTS ArharovCollectionLinks (
+id int(11) NOT NULL AUTO_INCREMENT,
+collection_id int(11) DEFAULT NULL,
+link_id int(11) DEFAULT NULL,
+PRIMARY KEY (id),
+KEY collection_id (collection_id),
+KEY link_id (link_id),
+CONSTRAINT ArharovCollectionLinks_ibfk_1 FOREIGN KEY (collection_id) REFERENCES ArharovLinkCollections (id) ON DELETE CASCADE,
+CONSTRAINT ArharovCollectionLinks_ibfk_2 FOREIGN KEY (link_id) REFERENCES ArharovLinks (id) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Дамп данных таблицы bh35910_kis.ArharovCollectionLinks: ~2 rows (приблизительно)
+INSERT INTO ArharovCollectionLinks (id, collection_id, link_id) VALUES
+(1, 1, 1),
+(2, 2, 2);
+
+-- Дамп структуры для таблица bh35910_kis.ArharovLinkCollections
+CREATE TABLE IF NOT EXISTS ArharovLinkCollections (
+id int(11) NOT NULL AUTO_INCREMENT,
+name varchar(255) NOT NULL,
+description text DEFAULT NULL,
+site_id int(11) DEFAULT NULL,
+PRIMARY KEY (id),
+KEY site_id (site_id),
+CONSTRAINT ArharovLinkCollections_ibfk_1 FOREIGN KEY (site_id) REFERENCES ArharovSites (id) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Дамп данных таблицы bh35910_kis.ArharovLinkCollections: ~2 rows (приблизительно)
+INSERT INTO ArharovLinkCollections (id, name, description, site_id) VALUES
+(1, 'AI Ресурсы', 'Подборка ссылок на ресурсы по искусственному интеллекту', 1),
+(2, 'Образовательные игры', 'Ссылки на игры для обучения', 2);
+
+-- Дамп структуры для таблица bh35910_kis.ArharovLinks
+CREATE TABLE IF NOT EXISTS ArharovLinks (
+id int(11) NOT NULL AUTO_INCREMENT,
+url varchar(255) NOT NULL,
+title varchar(255) DEFAULT NULL,
+description text DEFAULT NULL,
+site_id int(11) DEFAULT NULL,
+PRIMARY KEY (id),
+KEY site_id (site_id),
+CONSTRAINT ArharovLinks_ibfk_1 FOREIGN KEY (site_id) REFERENCES ArharovSites (id) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Дамп данных таблицы bh35910_kis.ArharovLinks: ~3 rows (приблизительно)
+INSERT INTO ArharovLinks (id, url, title, description, site_id) VALUES
+(1, 'https://you.com/search', 'Поиск на You.com', 'Инструмент для поиска информации', 1),
+(2, 'https://www.educaplay.com/en/learningresources/', 'Образовательные ресурсы', 'Коллекция образовательных игр и заданий', 2),
+(3, 'https://gradient.com/help/fill-in-the-blank', 'Gradient Fill-in-the-Blank', 'Руководство по созданию вопросов с пропусками', 3);
+
+-- Дамп структуры для таблица bh35910_kis.ArharovSites
+CREATE TABLE IF NOT EXISTS ArharovSites (
+id int(11) NOT NULL AUTO_INCREMENT,
+name varchar(255) NOT NULL,
+description text DEFAULT NULL,
+url varchar(255) NOT NULL,
+created_at timestamp NOT NULL DEFAULT current_timestamp(),
+PRIMARY KEY (id)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Дамп данных таблицы bh35910_kis.ArharovSites: ~3 rows (приблизительно)
+INSERT INTO ArharovSites (id, name, description, url, created_at) VALUES
+(1, 'You.com', 'Поисковая система с искусственным интеллектом', 'https://you.com', '2025-02-24 02:48:42'),
+(2, 'Educaplay', 'Инструмент для создания образовательных игр', 'https://www.educaplay.com', '2025-02-24 02:48:42'),
+(3, 'Gradient Help Center', 'Центр помощи для работы с Gradient', 'https://gradient.com/help', '2025-02-24 02:48:42');
+
+-- Дамп структуры для таблица bh35910_kis.ArharovTopics
+CREATE TABLE IF NOT EXISTS ArharovTopics (
+id int(11) NOT NULL AUTO_INCREMENT,
+name varchar(255) NOT NULL,
+description text DEFAULT NULL,
+site_id int(11) DEFAULT NULL,
+PRIMARY KEY (id),
+KEY site_id (site_id),
+CONSTRAINT ArharovTopics_ibfk_1 FOREIGN KEY (site_id) REFERENCES ArharovSites (id) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Дамп данных таблицы bh35910_kis.ArharovTopics: ~3 rows (приблизительно)
+INSERT INTO ArharovTopics (id, name, description, site_id) VALUES
+(1, 'Искусственный интеллект', 'Темы, связанные с AI и машинным обучением', 1),
+(2, 'Образование', 'Ресурсы для обучения и преподавания', 2),
+(3, 'Поддержка пользователей', 'Информация о поддержке пользователей', 3);
+
+-- Дамп структуры для таблица bh35910_kis.ArharovUsers
+CREATE TABLE IF NOT EXISTS ArharovUsers (
+id int(11) NOT NULL AUTO_INCREMENT,
+name varchar(255) NOT NULL,
+email varchar(255) NOT NULL,
+password varchar(255) NOT NULL,
+registered_at timestamp NOT NULL DEFAULT current_timestamp(),
+PRIMARY KEY (id),
+UNIQUE KEY email (email)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Дамп данных таблицы bh35910_kis.ArharovUsers: ~3 rows (приблизительно)
+INSERT INTO ArharovUsers (id, name, email, password, registered_at) VALUES
+(1, 'Иван Иванов', 'ivan@example.com', 'password123', '2025-02-24 02:53:37'),
+(2, 'Мария Смирнова', 'maria@example.com', 'securepass', '2025-02-24 02:53:37'),
+(3, 'Анна Кузнецова', 'anna@example.com', 'mypassword', '2025-02-24 02:53:37');
+
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
