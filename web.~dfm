@@ -1,0 +1,41 @@
+object Form1: TForm1
+  Left = 357
+  Top = 158
+  Width = 337
+  Height = 306
+  Caption = 'Form1'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object MainMenu1: TMainMenu
+    Left = 80
+    Top = 88
+    object q1: TMenuItem
+      Caption = 'q'
+      object N1: TMenuItem
+        Caption = #1050#1086#1085#1092#1080#1075#1091#1088#1072#1094#1080#1103
+        OnClick = N1Click
+      end
+    end
+    object w1: TMenuItem
+      Caption = 'w'
+      object tabl1: TMenuItem
+        Caption = 'Webresurs'
+        OnClick = tabl1Click
+      end
+    end
+    object e1: TMenuItem
+      Caption = 'e'
+      object abl1: TMenuItem
+        Caption = 'Tabl'
+      end
+    end
+  end
+end

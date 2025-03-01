@@ -1,0 +1,17 @@
+program web1;
+
+uses
+  Forms,
+  web in 'web.pas' {Form1},
+  web2 in 'web2.pas' {TabForm2},
+  Sys in 'Sys.pas' {SysForm};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TTabForm2, TabForm2);
+  Application.CreateForm(TSysForm, SysForm);
+  Application.Run;
+end.
