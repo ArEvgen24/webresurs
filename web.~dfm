@@ -1,9 +1,9 @@
 object Form1: TForm1
-  Left = 357
-  Top = 158
+  Left = 325
+  Top = 253
   Width = 337
   Height = 306
-  Caption = 'Form1'
+  Caption = 'Menu'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -23,18 +23,24 @@ object Form1: TForm1
         Caption = #1050#1086#1085#1092#1080#1075#1091#1088#1072#1094#1080#1103
         OnClick = N1Click
       end
+      object N2: TMenuItem
+        Caption = #1047#1072#1103#1074#1083#1077#1085#1080#1077
+        OnClick = N2Click
+      end
     end
     object w1: TMenuItem
       Caption = 'w'
       object tabl1: TMenuItem
-        Caption = 'Webresurs'
+        Caption = #1042#1093#1086#1076' '#1074' '#1089#1080#1089#1090#1077#1084#1091
         OnClick = tabl1Click
       end
     end
     object e1: TMenuItem
       Caption = 'e'
       object abl1: TMenuItem
-        Caption = 'Tabl'
+        AutoCheck = True
+        Caption = 'Baza'
+        OnClick = abl1Click
       end
     end
   end

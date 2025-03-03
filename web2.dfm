@@ -1,8 +1,8 @@
-object TabForm2: TTabForm2
-  Left = 1377
-  Top = 142
+object Form2avt: TForm2avt
+  Left = 483
+  Top = 256
   Width = 449
-  Height = 295
+  Height = 296
   Caption = 'Webresurs'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -34,6 +34,7 @@ object TabForm2: TTabForm2
     Height = 25
     Caption = #1042#1093#1086#1076
     TabOrder = 0
+    OnClick = Button1Click
   end
   object Edit1: TEdit
     Left = 192
@@ -56,5 +57,14 @@ object TabForm2: TTabForm2
     Height = 25
     Caption = #1042#1099#1081#1090#1080
     TabOrder = 3
+    OnClick = Button2Click
+  end
+  object ADOConnection1: TADOConnection
+    Left = 128
+    Top = 120
+  end
+  object ADOTable1: TADOTable
+    Left = 216
+    Top = 120
   end
 end

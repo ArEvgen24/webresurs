@@ -4,16 +4,20 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, DB, ADODB, StdCtrls;
+  Dialogs, DB, ADODB, StdCtrls, frxRich;
 
 type
-  TTabForm2 = class(TForm)
+  TForm2avt = class(TForm)
     Button1: TButton;
     Edit1: TEdit;
     Edit2: TEdit;
     Label1: TLabel;
     Label2: TLabel;
     Button2: TButton;
+    ADOConnection1: TADOConnection;
+    ADOTable1: TADOTable;
+    procedure Button2Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -21,10 +25,26 @@ type
   end;
 
 var
-  TabForm2: TTabForm2;
+  Form2avt: TForm2avt;
 
 implementation
 
+uses web;
+
 {$R *.dfm}
 
+procedure TForm2avt.Button2Click(Sender: TObject);
+begin
+close() ;
+end;
+
+procedure TForm2avt.Button1Click(Sender: TObject);
+begin
+  if Edit1.Text='admin' then
+  begin
+  if Edit2.Text='admin' then
+  Form1.show() ;
+
+end;
+end;
 end.

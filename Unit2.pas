@@ -7,7 +7,7 @@ uses
   Dialogs, DB, mySQLDbTables, Grids, DBGrids, StdCtrls, ExtCtrls, DBCtrls;
 
 type
-  TForm2 = class(TForm)
+  TForm2Baza = class(TForm)
     Edit1: TEdit;
     Edit2: TEdit;
     Edit3: TEdit;
@@ -26,7 +26,7 @@ type
   end;
 
 var
-  Form2: TForm2;
+  Form2Baza: TForm2Baza;
 
 implementation
 
