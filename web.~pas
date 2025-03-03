@@ -10,12 +10,12 @@ type
   TForm1 = class(TForm)
     MainMenu1: TMainMenu;
     q1: TMenuItem;
-    w1: TMenuItem;
-    e1: TMenuItem;
-    tabl1: TMenuItem;
     N1: TMenuItem;
-    abl1: TMenuItem;
     N2: TMenuItem;
+    w1: TMenuItem;
+    tabl1: TMenuItem;
+    e1: TMenuItem;
+    abl1: TMenuItem;
     procedure tabl1Click(Sender: TObject);
     procedure N1Click(Sender: TObject);
     procedure abl1Click(Sender: TObject);

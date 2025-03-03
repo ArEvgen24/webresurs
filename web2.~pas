@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, DB, ADODB, StdCtrls, frxRich;
+  Dialogs, DB, ADODB, StdCtrls, frxRich, sSkinProvider, sSkinManager;
 
 type
   TForm2avt = class(TForm)
@@ -26,7 +26,7 @@ type
 
 var
   Form2avt: TForm2avt;
-
+ 
 implementation
 
 uses web;

@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, DB, ADODB, StdCtrls, frxRich;
+  Dialogs, DB, ADODB, StdCtrls, frxRich, sSkinProvider, sSkinManager;
 
 type
   TForm2avt = class(TForm)
@@ -14,8 +14,8 @@ type
     Label1: TLabel;
     Label2: TLabel;
     Button2: TButton;
-    ADOConnection1: TADOConnection;
     ADOTable1: TADOTable;
+    ADOConnection1: TADOConnection;
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
   private

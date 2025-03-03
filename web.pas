@@ -16,14 +16,17 @@ type
     tabl1: TMenuItem;
     e1: TMenuItem;
     abl1: TMenuItem;
+
     procedure tabl1Click(Sender: TObject);
     procedure N1Click(Sender: TObject);
     procedure abl1Click(Sender: TObject);
     procedure N2Click(Sender: TObject);
   private
     { Private declarations }
+
   public
     { Public declarations }
+     pathGlobal:string;
   end;
 
 var

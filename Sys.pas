@@ -15,6 +15,7 @@ type
     Button3: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,6 +27,8 @@ var
 
 implementation
 
+uses web;
+
 {$R *.dfm}
 
 procedure TSysForm.Button1Click(Sender: TObject);
@@ -33,12 +36,34 @@ begin
 close() ;
 end;
 
-procedure TSysForm.Button2Click(Sender: TObject);var     f:textfile;
+procedure TSysForm.Button2Click(Sender: TObject);
+var       f:textfile;
           str:string;
+          localPath: string;
 begin
-  assignfile(f,'sys.ini');
+  localPath :=ExtractFilePath(ParamStr(0));
+  assignfile(f,localPath +'sys.ini');
+  showmessage (localPath +'sys.ini');
   reset(f);
   readln(f,str); //[backup] ѕуть к архиву
+  readln(f,str);
+  Form1.pathGlobal:=str;
+  closefile(f) ;
+
+end;
+
+procedure TSysForm.Button3Click(Sender: TObject);
+
+var
+  f:textfile;
+  localPath: string;
+begin
+  localPath :=ExtractFilePath(ParamStr(0));
+  assignfile(f,localPath +'sys.ini');
+  rewrite(f);
+  writeln(f,'[backup]');
+  writeln(f,localPath + Form1.pathGlobal);
+  closefile(f);
 
 end;
 

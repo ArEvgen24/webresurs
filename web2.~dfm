@@ -1,6 +1,6 @@
 object Form2avt: TForm2avt
-  Left = 597
-  Top = 204
+  Left = 1390
+  Top = 88
   Width = 449
   Height = 296
   Caption = 'Webresurs'

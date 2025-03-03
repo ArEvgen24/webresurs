@@ -1,6 +1,6 @@
 object Form2avt: TForm2avt
-  Left = 483
-  Top = 256
+  Left = 1222
+  Top = 451
   Width = 449
   Height = 296
   Caption = 'Webresurs'
@@ -59,12 +59,12 @@ object Form2avt: TForm2avt
     TabOrder = 3
     OnClick = Button2Click
   end
-  object ADOConnection1: TADOConnection
-    Left = 128
-    Top = 120
-  end
   object ADOTable1: TADOTable
     Left = 216
+    Top = 120
+  end
+  object ADOConnection1: TADOConnection
+    Left = 128
     Top = 120
   end
 end
