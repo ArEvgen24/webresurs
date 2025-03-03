@@ -1,0 +1,90 @@
+object Form3P: TForm3P
+  Left = 695
+  Top = 539
+  Width = 595
+  Height = 630
+  Caption = #1055#1077#1095#1072#1090#1100
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DBGrid1: TDBGrid
+    Left = 64
+    Top = 272
+    Width = 320
+    Height = 120
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 40
+    Top = 456
+    Width = 240
+    Height = 25
+    TabOrder = 1
+  end
+  object ADOConnection1: TADOConnection
+    Left = 184
+    Top = 192
+  end
+  object DataSource1: TDataSource
+    Left = 376
+    Top = 224
+  end
+  object DataSource2: TDataSource
+    Left = 456
+    Top = 232
+  end
+  object ADOTable1: TADOTable
+    Left = 240
+    Top = 184
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 296
+    Top = 304
+    object N1: TMenuItem
+      Caption = #1087#1077#1095#1072#1090#1100' '#1079#1072#1103#1074#1083#1077#1085#1080#1103
+    end
+  end
+  object frxReport1: TfrxReport
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    ReportOptions.CreateDate = 45719.511361250000000000
+    ReportOptions.LastChange = 45719.511361250000000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 576
+    Top = 248
+    Datasets = <>
+    Variables = <>
+    Style = <>
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+    end
+  end
+  object frxRichObject1: TfrxRichObject
+    Left = 648
+    Top = 240
+  end
+end
