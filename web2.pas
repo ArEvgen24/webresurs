@@ -16,6 +16,7 @@ type
     Button2: TButton;
     ADOTable1: TADOTable;
     ADOConnection1: TADOConnection;
+    sSkinManager1: TsSkinManager;
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
   private

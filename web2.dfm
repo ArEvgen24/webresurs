@@ -1,8 +1,8 @@
 object Form2avt: TForm2avt
-  Left = 1222
-  Top = 451
-  Width = 449
-  Height = 296
+  Left = 726
+  Top = 556
+  Width = 498
+  Height = 414
   Caption = 'Webresurs'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -66,5 +66,39 @@ object Form2avt: TForm2avt
   object ADOConnection1: TADOConnection
     Left = 128
     Top = 120
+  end
+  object sSkinManager1: TsSkinManager
+    ButtonsOptions.OldGlyphsMode = True
+    InternalSkins = <>
+    SkinDirectory = 'C:\Program Files (x86)\acnt_d7\Skins'
+    SkinName = 'Moonlight'
+    SkinInfo = '15'
+    ThirdParty.ThirdEdits = 
+      'TEdit'#13#10'TMemo'#13#10'TMaskEdit'#13#10'TLabeledEdit'#13#10'THotKey'#13#10'TListBox'#13#10'TCheck' +
+      'ListBox'#13#10'TRichEdit'#13#10'TDateTimePicker'
+    ThirdParty.ThirdButtons = 'TButton'
+    ThirdParty.ThirdBitBtns = 'TBitBtn'
+    ThirdParty.ThirdCheckBoxes = 'TCheckBox'#13#10'TRadioButton'#13#10'TGroupButton'
+    ThirdParty.ThirdGroupBoxes = 'TGroupBox'#13#10'TRadioGroup'
+    ThirdParty.ThirdListViews = 'TListView'
+    ThirdParty.ThirdPanels = 'TPanel'
+    ThirdParty.ThirdGrids = 'TStringGrid'#13#10'TDrawGrid'
+    ThirdParty.ThirdTreeViews = 'TTreeView'
+    ThirdParty.ThirdComboBoxes = 'TComboBox'#13#10'TColorBox'
+    ThirdParty.ThirdWWEdits = ' '
+    ThirdParty.ThirdVirtualTrees = ' '
+    ThirdParty.ThirdGridEh = ' '
+    ThirdParty.ThirdPageControl = 'TPageControl'
+    ThirdParty.ThirdTabControl = 'TTabControl'
+    ThirdParty.ThirdToolBar = 'TToolBar'
+    ThirdParty.ThirdStatusBar = 'TStatusBar'
+    ThirdParty.ThirdSpeedButton = 'TSpeedButton'
+    ThirdParty.ThirdScrollControl = 'TScrollBox'
+    ThirdParty.ThirdUpDown = 'TUpDown'
+    ThirdParty.ThirdScrollBar = 'TScrollBar'
+    ThirdParty.ThirdStaticText = 'TStaticText'
+    ThirdParty.ThirdNativePaint = ' '
+    Left = 104
+    Top = 8
   end
 end
